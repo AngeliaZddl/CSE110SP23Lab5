@@ -24,7 +24,7 @@ jobs:
         repoName: 'CSE110SP23Lab5-introduction-to-github'
         repoDescription: 'introduction-to-github'
         repoVisibility: 'public'
-        securityToken: ${{ secrets.GITHUB_TOKEN }}
+        securityToken: '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'
       
     - name: Print Repository URL
       run: |
