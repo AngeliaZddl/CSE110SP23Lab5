@@ -15,22 +15,9 @@ jobs:
       uses: actions/checkout@v3
       with:
         ref: master
-        token: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Check if repository directory exists
-      id: if-repo-exist
-      run: |
-        if [ -d "AngeliaZddl/CSE110SP23Lab5-introduction-to-github" ]; then
-          echo "Repository directory exists"
-          echo true
-        else
-          echo "Repository directory does not exist"
-          echo false
-        fi
 
     - name: Create GitHub Repo
       id: create_repo
-      if: steps.if-repo-exist == false
       uses: howlowck/create-repo-action@v1.0
       with:
         repoName: 'CSE110SP23Lab5-introduction-to-github'
