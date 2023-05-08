@@ -28,8 +28,9 @@ jobs:
         name: 'introduction-to-github'
         access-token: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Set output
-      run: echo "::set-env name=repo_url::'${{ job.create_repo.outputs.repo_url }}'"
+    - name: Set Repo URL
+      run: echo "::set-env name=repo_url::https://github.com/AngeliaZddl/CSE110SP23Lab5-introduction-to-github"
     
     - name: Print Repo URL
-      run: echo "repo_url='${{ job.create_repo.outputs.repo_url }}'" >> $GITHUB_ENV
+      run: echo "repo_url='${{ env.repo_url }}'"
+      
