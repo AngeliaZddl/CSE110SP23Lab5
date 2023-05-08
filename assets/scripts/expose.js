@@ -13,12 +13,10 @@ function init() {
     if (selectedHorn === 'party-horn') {
       hornImage.src = 'assets/images/party-horn.svg';
       hornSound.src = 'assets/audio/party-horn.mp3';
-    } 
-    if(selectedHorn === 'air-horn') {
+    } else if(selectedHorn === 'air-horn') {
       hornImage.src = 'assets/images/air-horn.svg';
       hornSound.src = 'assets/audio/air-horn.mp3';
-    }
-    if(selectedHorn === 'car-horn') {
+    } else if(selectedHorn === 'car-horn') {
       hornImage.src = 'assets/images/car-horn.svg';
       hornSound.src = 'assets/audio/car-horn.mp3';
     }
