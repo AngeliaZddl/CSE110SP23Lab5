@@ -1,16 +1,17 @@
-name: Create Repository
+name: Create Repo
 
 on:
-  workflow_dispatch:
+  push:
+    branches: [ master ]
 
 jobs:
-  create_repository:
+  create_repo:
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
     - name: Create Repository
-      uses: f1lander/create-repository-action@1.0.0    
+      uses: f1lander/create-repository-action@v1.0.2
       with:
-        name: 'repository-name'
-        org: 'org-name'
-        private: false
-        access-token: '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'
+        name: 'introduction-to-github'
+        access-token: ${{ secrets.GITHUB_TOKEN }}
