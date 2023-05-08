@@ -8,6 +8,7 @@ function init() {
   const hornSound = document.querySelector('audio');
   const jsConfetti = new JSConfetti();
   hornSelect.addEventListener("change", showPicAndSound);
+
   function showPicAndSound(){
     const selectedHorn = hornSelect.value;
     if (selectedHorn === 'party-horn') {
@@ -28,6 +29,7 @@ function init() {
   const slider = document.querySelector('#volume-controls input');
   const volumeIcon = document.querySelector('#volume-controls img');
   slider.addEventListener("input", changeVolume);
+
   function changeVolume(){
     const volume = slider.value;
     if (volume == 0) {
@@ -44,10 +46,11 @@ function init() {
 
   const playButton = document.querySelector('button');
   playButton.addEventListener("click", playSound);
+  
   function playSound(){
     hornSound.play();
     const selectedHorn = hornSelect.value;
-    if (selectedHorn !== 'select') {
+    if (selectedHorn === 'party-horn') {
       jsConfetti.addConfetti();
     }
   }
