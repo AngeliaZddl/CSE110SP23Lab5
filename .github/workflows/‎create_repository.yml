@@ -1,27 +1,31 @@
-name: Create Repo
+name: 'Create Repo'
 
 on:
   push:
     branches: [ master ]
-  
+
   workflow_dispatch:
 
 jobs:
   create_repo:
+    
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         ref: master
         token: ${{ secrets.GITHUB_TOKEN }}
-  
-    - name: Create Repository
-      id: create_repo
-      uses: f1lander/create-repository-action@v1.0.2
-      with:
-        name: 'introduction-to-github'
-        access-token: ${{ secrets.GITHUB_TOKEN }}
 
+    - name: Create GitHub Repo
+      id: create_repo
+      uses: howlowck/create-repo-action@v1.0
+      with:
+        repoName: 'CSE110SP23Lab5-introduction-to-github'
+        repoDescription: 'introduction-to-github'
+        repoVisibility: 'public'
+        securityToken: ${{ secrets.GITHUB_TOKEN }}
+      
     - name: Print Repository URL
-      run: echo "Repository URL: ${{ steps.create_repo.outputs.html_url }}"
+      run: |
+          echo "Repository URL: ${{ steps.create_repo.outputs.repoUrl }}"
