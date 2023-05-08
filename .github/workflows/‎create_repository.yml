@@ -22,7 +22,14 @@ jobs:
         node-version: '16'
   
     - name: Create Repository
+      id: create_repo
       uses: f1lander/create-repository-action@v1.0.2
       with:
         name: 'introduction-to-github'
         access-token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Set output
+      run: echo "::set-env name=repo_url::'${{ job.create_repo.outputs.repo_url }}'"
+    
+    - name: Print Repo URL
+      run: echo "repo_url='${{ job.create_repo.outputs.repo_url }}'" >> $GITHUB_ENV
