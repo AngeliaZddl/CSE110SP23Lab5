@@ -1,0 +1,18 @@
+name: Delete Repo
+
+on:
+    push:
+      branches: [ master ]
+    
+    workflow_dispatch:
+
+jobs:
+    delete_repo:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Delete Repository
+          uses: f1lander/delete-repository-action@v2.2
+          with:
+            owner: 'AngeliaZddl'
+            repo: 'introduction-to-github'
+            token: ${{ secrets.GITHUB_TOKEN }}

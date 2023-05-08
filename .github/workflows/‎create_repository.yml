@@ -15,11 +15,6 @@ jobs:
       with:
         ref: master
         token: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16'
   
     - name: Create Repository
       id: create_repo
@@ -28,7 +23,4 @@ jobs:
         name: 'introduction-to-github'
         access-token: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Get Repository URL
-      run: |
-        echo "repo_url='${{ steps.create_repo.outputs.repository_url }}'" >> $GITHUB_ENV
       
