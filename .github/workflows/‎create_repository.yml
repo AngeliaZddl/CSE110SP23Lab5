@@ -24,5 +24,4 @@ jobs:
         access-token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Print Repository URL
-      run: |
-          echo "Repository URL: ${{ steps.create_repo.outputs.html_url }}"
+      run: echo "Repository URL: ${{ steps.create_repo.outputs.html_url }}"
