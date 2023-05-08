@@ -12,4 +12,4 @@ Chang Shu(A16846972)
 [explore.html](https://angeliazddl.github.io/CSE110SP23Lab5/explore.html)
 
 ## Introduction-to-github
-[intro.html](https://github.com/AngeliaZddl/CSE110SP23Lab5)
+[Introduction-to-github Repo](https://github.com/AngeliaZddl/CSE110SP23Lab5-introduction-to-github)
