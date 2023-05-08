@@ -13,4 +13,4 @@ jobs:
         name: introduction-to-github
         description: A repository for learning the basics of GitHub
         private: 'false'
-        github-token: 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
+        github-token: ${{ secrets.GITHUB_TOKEN }}
