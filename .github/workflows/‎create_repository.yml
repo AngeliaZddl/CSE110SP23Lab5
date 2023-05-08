@@ -28,9 +28,7 @@ jobs:
         name: 'introduction-to-github'
         access-token: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Set Repo URL
-      run: echo "repo_url='$https://github.com/AngeliaZddl/CSE110SP23Lab5-introduction-to-github'" >> $GITHUB_OUTPUT
-    
-    - name: Print Repo URL
-      run: echo $repo_url
+    - name: Get Repository URL
+      run: |
+        echo "repo_url='${{ steps.create_repo.outputs.repository_url }}'" >> $GITHUB_ENV
       
