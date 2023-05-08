@@ -9,10 +9,19 @@ function init() {
   const jsConfetti = new JSConfetti();
   hornSelect.addEventListener("change", showPicAndSound);
   function showPicAndSound(){
-  const selectedHorn = hornSelect.value;
+    const selectedHorn = hornSelect.value;
     if (selectedHorn === 'party-horn') {
       hornImage.src = 'assets/images/party-horn.svg';
       hornSound.src = 'assets/audio/party-horn.mp3';
+    } else if(selectedHorn === 'air-horn') {
+      hornImage.src = 'assets/images/air-horn.svg';
+      hornSound.src = 'assets/audio/air-horn.mp3';
+    } else if(selectedHorn === 'car-horn') {
+      hornImage.src = 'assets/images/car-horn.svg';
+      hornSound.src = 'assets/audio/car-horn.mp3';
+    } else {
+      hornImage.src = 'assets/images/no-image.svg';
+      hornSound.src = null;
     }
   }
 
@@ -38,7 +47,7 @@ function init() {
   function playSound(){
     hornSound.play();
     const selectedHorn = hornSelect.value;
-    if (selectedHorn === 'party-horn') {
+    if (selectedHorn !== 'select') {
       jsConfetti.addConfetti();
     }
   }
