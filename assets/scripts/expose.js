@@ -47,7 +47,7 @@ function init() {
   function playSound(){
     hornSound.play();
     const selectedHorn = hornSelect.value;
-    if (selectedHorn !== 'select') {
+    if (selectedHorn === 'party-horn') {
       jsConfetti.addConfetti();
     }
   }
