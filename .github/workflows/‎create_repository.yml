@@ -20,7 +20,7 @@ jobs:
     - name: Check if repository directory exists
       id: if-repo-exist
       run: |
-        if [ -d "./CSE110SP23Lab5-introduction-to-github" ]; then
+        if [ -d "AngeliaZddl/CSE110SP23Lab5-introduction-to-github" ]; then
           echo "Repository directory exists"
           echo true
         else
