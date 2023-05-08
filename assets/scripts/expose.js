@@ -19,6 +19,9 @@ function init() {
     } else if(selectedHorn === 'car-horn') {
       hornImage.src = 'assets/images/car-horn.svg';
       hornSound.src = 'assets/audio/car-horn.mp3';
+    } else {
+      hornImage.src = 'assets/images/no-image.svg';
+      hornSound.src = null;
     }
   }
 
