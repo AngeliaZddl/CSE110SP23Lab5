@@ -23,4 +23,6 @@ jobs:
         name: 'introduction-to-github'
         access-token: ${{ secrets.GITHUB_TOKEN }}
 
-      
+    - name: Set output
+      run: echo "repo_url=${{ steps.create_repo.outputs }}" >> $GITHUB_OUTPUT
+    
