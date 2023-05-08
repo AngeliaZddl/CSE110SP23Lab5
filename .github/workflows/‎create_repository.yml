@@ -1,16 +1,14 @@
 name: Create Repository
 
-on:
-  workflow_dispatch:
+on: [push]
 
 jobs:
-  create_repository:
+  create_repo:
     runs-on: ubuntu-latest
     steps:
-    - name: Create Repository
-      uses: actions/create-repo@v1
-      with:
-        name: introduction-to-github
-        description: A repository for learning the basics of GitHub
-        private: 'false'
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Create a New Repository
+      run: |
+        curl -X POST \
+        -H "Authorization: token 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" \
+        -d '{"name":"introduction-to-github"}' \
+        https://api.github.com/user/repos
