@@ -10,3 +10,6 @@ Chang Shu(A16846972)
 
 ## Explore
 [explore.html](https://angeliazddl.github.io/CSE110SP23Lab5/explore.html)
+
+## Introduction-to-github
+[intro.html](https://github.com/AngeliaZddl/CSE110SP23Lab5)
