@@ -1,7 +1,6 @@
 name: Create Repository
 
-on:
-  workflow_dispatch:
+on: [push]
 
 jobs:
   create_repository:
