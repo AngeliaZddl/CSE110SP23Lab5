@@ -1,14 +1,23 @@
 name: Create Repository
 
-on: [push]
+on:
+  workflow_dispatch:
 
 jobs:
-  create_repo:
+  create_repository:
     runs-on: ubuntu-latest
     steps:
-    - name: Create a New Repository
-      run: |
-        curl -X POST \
-        -H "Authorization: token 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" \
-        -d '{"name":"introduction-to-github"}' \
-        https://api.github.com/user/repos
+    - name: Create Repository
+      uses: actions/github-script@v4
+      env:
+        REPO_NAME: introduction-to-github
+        REPO_DESCRIPTION: A repository for learning the basics of GitHub
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          const { data } = await github.repos.createForAuthenticatedUser({
+            name: process.env.REPO_NAME,
+            description: process.env.REPO_DESCRIPTION,
+            private: false
+          });
+          console.log(`Repository created: ${data.html_url}`);
