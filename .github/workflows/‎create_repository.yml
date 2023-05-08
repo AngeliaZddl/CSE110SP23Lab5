@@ -1,14 +1,14 @@
 name: Create Repository
 
-on: [push]
+on:
+  workflow_dispatch:
 
 jobs:
-  create_repo:
+  create_repository:
     runs-on: ubuntu-latest
     steps:
-    - name: Create a New Repository
-      run: |
-        curl -X POST \
-        -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-        -d '{"name":"introduction-to-github"}' \
-        https://api.github.com/user/repos
+    - name: Create Repository
+      uses: f1lander/create-repository-action@v1.0.2
+      with:
+        name: 'introduction-to-github'
+        access-token: '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'
