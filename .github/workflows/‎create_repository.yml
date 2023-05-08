@@ -16,16 +16,7 @@ jobs:
       with:
         ref: master
 
-    - name: Repository Dispatch
-      id: check_repo
-      uses: peter-evans/repository-dispatch@v2.1.1
-      with:
-        token: ${{ secrets.ACCESS_TOKEN }}
-        repository: 'CSE110SP23Lab5-introduction-to-github'
-        event-type: create-repo
-
     - name: Create GitHub Repo
-      if: steps.check_repo.outputs == 'failure'
       id: create_repo
       uses: howlowck/create-repo-action@v1.0
       with:
