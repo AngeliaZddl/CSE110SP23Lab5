@@ -11,4 +11,5 @@ jobs:
       uses: f1lander/create-repository-action@v1.0.2
       with:
         name: 'introduction-to-github'
-        access-token: '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'
+        private: false
+        access-token: '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'
